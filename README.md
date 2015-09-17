@@ -131,3 +131,9 @@ So to end the game, we have to check if someone has landed on square 100. To do 
 What that says is if the spinmove or the turnmove are 100, then print out that the current player has won the game, set winner to True and break out of the loop, which will then cause the While loop to break because winner is no longer false. If the current player isn't at 100, then keep playing is what the else statement says. 
 
 And that's it. If you run the code on the common line -- python chutes.py -- you'll get the step by step printout of the game until someone wins.
+
+    Player 2 has spun a 1
+    Player 2 is moving to square 100
+    Player 2 ended up on square 100
+    Player 2 has won the game
+
