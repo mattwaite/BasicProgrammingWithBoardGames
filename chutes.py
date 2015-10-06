@@ -1,11 +1,11 @@
-import random
+import random, time
 
 winner = False
 
 players = {"Player 4": 0, "Player 3":0, "Player 2":0, "Player 1":0}
 
 def spin():
-    return random.randrange(1, 6)
+    return random.randrange(1, 7)
 
 def move(spin, playermove):
     if playermove == 1:
@@ -55,10 +55,17 @@ while winner == False:
     for k,v in players.iteritems():
         roll = spin()
         print "%s has spun a %i" % (k, roll)
+#        time.sleep(1)
         spinmove = roll + v
         print "%s is moving to square %i" % (k, spinmove)
+#        time.sleep(1)
         turnmove = move(roll, spinmove)
         print "%s ended up on square %i" % (k, turnmove)
+#        time.sleep(1)
+        if spinmove > turnmove:
+            print "Chute!"
+        elif spinmove < turnmove:
+            print "Ladder!"
         players[k] = turnmove
         if spinmove == 100 or turnmove == 100:
             print "%s has won the game" % k
@@ -66,7 +73,3 @@ while winner == False:
             break
         else:
             continue
-    
-    
-
-    
