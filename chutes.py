@@ -5,7 +5,7 @@ winner = False
 players = {"Player 4": 0, "Player 3":0, "Player 2":0, "Player 1":0}
 
 def spin():
-    return random.randrange(0, 7)
+    return random.randrange(1, 7)
 
 def move(spin, playermove):
     if playermove == 1:
