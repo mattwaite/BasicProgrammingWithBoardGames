@@ -52,23 +52,23 @@ def move(spin, playermove):
 
 
 while winner == False:
-    for k,v in players.iteritems():
+    for k,v in players.items():
         roll = spin()
-        print "%s has spun a %i" % (k, roll)
+        print("%s has spun a %i" % (k, roll))
 #        time.sleep(1)
         spinmove = roll + v
-        print "%s is moving to square %i" % (k, spinmove)
+        print("%s is moving to square %i" % (k, spinmove))
 #        time.sleep(1)
         turnmove = move(roll, spinmove)
-        print "%s ended up on square %i" % (k, turnmove)
+        print("%s ended up on square %i" % (k, turnmove))
 #        time.sleep(1)
         if spinmove > turnmove:
-            print "Chute!"
+            print("Chute!")
         elif spinmove < turnmove:
-            print "Ladder!"
+            print("Ladder!")
         players[k] = turnmove
         if spinmove == 100 or turnmove == 100:
-            print "%s has won the game" % k
+            print("%s has won the game" % k)
             winner = True
             break
         else:
